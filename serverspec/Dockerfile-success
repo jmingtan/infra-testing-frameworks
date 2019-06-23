@@ -1,0 +1,8 @@
+FROM ruby:2.6.3-alpine
+RUN apk add nginx
+RUN mkdir -p /run/nginx
+WORKDIR /usr/src/app
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+COPY . .
+CMD ["./docker-entrypoint.sh"]

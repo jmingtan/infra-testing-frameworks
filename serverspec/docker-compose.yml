@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  serverspec-success:
+    build:
+      context: .
+      dockerfile: Dockerfile-success
+
+  serverspec-failure:
+    build:
+      context: .
+      dockerfile: Dockerfile-failure
